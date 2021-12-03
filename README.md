@@ -12,3 +12,14 @@
 9. Use earlier obtained app ID to connect this sender app to reciver app from the Cast Connect and Logger Control tab. 
 10. Use cast icon on the top tab of CaC tool to luanch reciever app on your chromecast. The cast icon appears only when all above steps are followed.
 10. Go to "Load Media" tab of the CaC tool and load the default content by using "Load" radio button and hit "Send request". This should play the content on chromecast receiver app. 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+For reciever app, the reciver/js/main.js file is modified referring to https://developers.google.com/cast/docs/debugging/cast_debug_logger?hl=en. These initlizations were suggested for debuggin the reciever app. 
+Deubugging steps: 
+* I have modified Mux's SDK and Google's Reference SDK to get debug log and bitrate/bandwidth parameters but the issue I am facing is how to read the logs.
+* I have been tryin to use "adb logcat", "adb shell dumpsys" etc but they give generic logs about device not app playback stats. It seems this is not the way to get app playback stats
+* Google's guides suggest to https://developers.google.com/cast/docs/debugging/remote_debugger?hl=en that for reciever app debugging use "chrome://inspect" (on Chrome browser) or "edge://inspect" (on Windows Chromium Edge browser). 
+* However, I tried it and both Chrome and Edge browsers dont show the "inspect" link for the device.
+* I checked Google Cast Help/Support pages and came across that there are open bugs regarding the remote debugger. I have provided my comments under the latest bug on their portal :https://issuetracker.google.com/issues/191684319
